@@ -5,7 +5,10 @@ metadata:
   generateName: disable-alerts-
   labels:
     codefresh.io/cert: disable-job  
-spec:
+  annotations:
+    argocd.argoproj.io/sync-wave: "20" 
+    argocd.argoproj.io/hook: PreSync
+ spec:
   template:
     spec:
       containers:
